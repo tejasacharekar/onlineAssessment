@@ -4,12 +4,15 @@ on:
   push:
     branches: [ "main" ]
 
-jobs:
-  build:
-    steps:
-      - uses: actions/checkout@v1
-      - name: Build Application
-          runs-on: docker:latest
-          run: docker build -t tejasacharekar/nginxalpine:3 .
+stages:
+ - build
+
+build:
+  stage: build
+  steps:
+    - image: docker:latest
+      script: 
+      - docker build -t tejasacharekar/nginxalpine:3 .
+
 
 
