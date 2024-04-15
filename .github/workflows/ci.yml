@@ -4,15 +4,16 @@ on:
   push:
     branches: [ "main" ]
 
-stages:
- - build
 
-build:
-  stage: build
-  steps:
-    - image: docker:latest
-      script: 
-      - docker build -t tejasacharekar/nginxalpine:3 .
+jobs:
 
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
 
 
