@@ -6,8 +6,10 @@ on:
 
 jobs:
   build:
-    name: Build Application
-    runs-on: docker:latest
-    script:
-      - docker build -t tejasacharekar/nginxalpine:3 .
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build Application
+          runs-on: docker:latest
+          run: docker build -t tejasacharekar/nginxalpine:3 .
+
 
