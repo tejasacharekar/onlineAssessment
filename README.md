@@ -1,2 +1,19 @@
-# onlineAssessment
-Repo for online assessment
+# Steps which are performed in Assesment
+- Create a Github repo which will have all the codes required for assesment.
+- Created HTML file for to use in Dockerfile.
+- Create Docker file with the requirement. 
+	- I used nginx alpine image which is small in size.
+	- Expose port 80.
+	- Copy index.html file from local to the designated location in image.
+	- Check the Vulnerabilities using docker scout which show that in our image we don't have any critical or high vulnerability.
+	- Check space in dockerhub and push the image
+	- dockerhub image: tejasacharekar/nginxalpine:2
+- Created AWS ECS Cluster to deploy application.
+- Create Task definition
+- Create a Service to deploy application
+- Update security group so it can allow to view the webpage.
+- Check the webpage and it is showing the output as per container image.
+- Created CICD pipeline in GitHub Actions
+	- First step is completed to build image from dockerfile. Checked and verified.
+	- Push Dockerimage to docker registry.
+	- Write a script to deploy container image to ECS.
