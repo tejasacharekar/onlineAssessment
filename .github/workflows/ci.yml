@@ -1,0 +1,13 @@
+name: Deploying Container on ECS
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build Application
+    runs-on: docker:latest
+    script:
+      - docker build -t tejasacharekar/nginxalpine:3 .
+
