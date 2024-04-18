@@ -34,4 +34,4 @@ jobs:
         # sed -i 's/tejasacharekar\/nginxalpine/tejasacharekar\/nginxalpine:2/g' onlineassesmentdeploy.json
         # ls -all && pwd
         aws ecs register-task-definition --cli-input-json file://onlineassesment.json
-        ## aws ecs update-service --cluster onlineAssessment --service onlineAssessment --task-definition onlineassesmentdeploy
+        aws ecs update-service --cluster onlineAssessment --service onlineAssessment --task-definition onlineassesmentdeploy
