@@ -1,0 +1,20 @@
+{
+    "containerDefinitions": [
+        {
+            "name": "nginxalpine",
+            "image": "tejasacharekar/nginxalpine",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "http",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true
+        }
+    ],
+    "family": "onlineassesmentdeploy"
+}
