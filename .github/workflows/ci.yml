@@ -31,8 +31,7 @@ jobs:
     - name: Fill in the new image ID in the Amazon ECS task definition
       run: |
         aws ecs describe-task-definition --task-definition onlineassesmentdeploy > onlineassesmentdeploy.json
-        sed -i 's/"image": ".*"/"image": "tejasacharekar/nginxalpine"/g' onlineassesmentdeploy.json
+        sed -i 's/tejasacharekar\/nginxalpine/tejasacharekar\/nginxalpine:2/g' onlineassesmentdeploy.json
         ls -all && pwd
         ## aws register-task-definition --cli-input-json file:  onlineassesmentdeploy.json
         ## aws ecs update-service --cluster onlineAssessment --service onlineAssessment --task-definition onlineassesmentdeploy
-
