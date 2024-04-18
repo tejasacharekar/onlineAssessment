@@ -13,7 +13,8 @@
                     "appProtocol": "http"
                 }
             ],
-            "essential": true
+            "essential": true,
+            "memory": 10
         }
     ],
     "family": "onlineassesmentdeploy"
