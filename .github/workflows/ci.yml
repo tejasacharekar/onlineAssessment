@@ -29,9 +29,6 @@ jobs:
         aws-region: ap-south-1
     
     - name: Fill in the new image ID in the Amazon ECS task definition
-      id: task-def
-      uses: aws-actions/amazon-ecs-render-task-definition@v1
-      with:
-        task-definition: onlineassesmentdeploy.json
-        container-name: nginxalpine
-        image: tejasacharekar/nginxalpine:latest
+      run: |
+        aws ecs describe-task-definition --task-definition onlineassesmentdeploy > onlineassesmentdeploy.json
+        cat onlineassesmentdeploy.json
