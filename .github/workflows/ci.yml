@@ -33,5 +33,5 @@ jobs:
         aws ecs describe-task-definition --task-definition onlineassesmentdeploy > onlineassesmentdeploy.json
         sed -i 's/tejasacharekar\/nginxalpine/tejasacharekar\/nginxalpine:2/g' onlineassesmentdeploy.json
         ls -all && pwd
-        aws ecs register-task-definition --cli-input-json file://onlineassesmentdeploy.json
+        aws ecs register-task-definition --family onlineassesmentdeploy --containerDefinitions file://onlineassesmentdeploy.json
         ## aws ecs update-service --cluster onlineAssessment --service onlineAssessment --task-definition onlineassesmentdeploy
