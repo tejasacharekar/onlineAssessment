@@ -17,4 +17,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
+    
+    - name: Pushing Image to Docker Registry
       run: docker push tejasacharekar/nginxalpine:latest
