@@ -32,3 +32,5 @@ jobs:
       run: |
         aws ecs describe-task-definition --task-definition onlineassesmentdeploy > onlineassesmentdeploy.json
         cat onlineassesmentdeploy.json
+        print $GITHUB_RUN_NUMBER
+        ## aws ecs update-service --cluster onlineAssessment --service onlineAssessment --task-definition onlineassesmentdeploy:3
